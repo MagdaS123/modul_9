@@ -11,6 +11,7 @@ def click_inputs_tab(driver_instance):
 
 def input_content_visible(driver_instance):
     elem = wait_for_visibility_of_element(driver_instance, input_content)
+    return elem.is_displayed()
 
 
 def send_corret_keys_to_input(driver_instance):
