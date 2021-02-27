@@ -5,6 +5,7 @@ hovers_content = 'hovers_content'
 gentelman_pic = '//*[@id="hovers-content"]/div/div[1]/img'
 gentelman_link = '//*[@id="hovers-content"]/div/div[1]/div/a'
 
+
 # klikniecie w naszego taba
 def click_hovers_tab(driver_instance):
     wait_for_visibility_of_element(driver_instance, hovers_tab)
