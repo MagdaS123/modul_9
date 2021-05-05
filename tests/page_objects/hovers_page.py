@@ -1,7 +1,7 @@
 from tests.helpers.support_functions import *
 
 hovers_tab = 'hovers-header'
-hovers_content = 'hovers_content'
+hovers_content = 'hovers-content'
 gentelman_pic = '//*[@id="hovers-content"]/div/div[1]/img'
 gentelman_link = '//*[@id="hovers-content"]/div/div[1]/div/a'
 
