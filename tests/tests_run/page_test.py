@@ -59,7 +59,9 @@ class Tests(unittest.TestCase):
     def test10_datepicker(self):
         date_picker_page.click_datepicker_visible(self.driver)
         self.assertTrue(date_picker_page.datepicker_content_displayed(self.driver))
-        date_picker_page.choose_date(self.driver)
+        date_picker_page.datepicker_send_correct_keys(self.driver)
+        date_picker_page.datepicker_send_incorrect_keys(self.driver)
+        date_picker_page.datepicker_send_outofscope_keys(self.driver)
 
 
     def test11_basic_auth(self):
@@ -121,7 +123,7 @@ class Tests(unittest.TestCase):
     def test14_dragdrop(self):
         drag_drop_page.click_dragdrop_tab(self.driver)
         self.assertTrue(drag_drop_page.dragdrop_visible(self.driver))
-        drag_drop_page.draganddrop(self.driver)
+        drag_drop_page.check_drag_and_drop(self.driver)
 
 
     def test15_stauscode_200(self):

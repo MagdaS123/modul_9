@@ -1,5 +1,6 @@
 from tests.helpers.support_functions import *
 from time import sleep
+import os.path
 
 dragdrop_tab = 'draganddrop-header'
 dragdrop_content = 'draganddrop-content'
@@ -30,3 +31,18 @@ def draganddrop(driver_instance):
     assert "B" in target_element.text
     print(target_element.text)
 
+def check_drag_and_drop(driver_instance):
+    driver_instance.implicitly_wait(10)
+    driver_instance.get('http://simpletestsite.fabrykatestow.pl/')
+
+    path = os.path.abspath('drag_and_drop_helper.js')
+    with open(path, 'r') as js_file:
+        line = js_file.readline()
+        script = ''
+        while line:
+            script += line
+            line = js_file.readline()
+
+    driver_instance.execute_script(script + "jQuery('#column-a').simulateDragDrop({ dropTarget: '#column-b'});")
+    sleep(10)
+    return True
